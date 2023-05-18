@@ -3,9 +3,9 @@ FROM ubuntu:22.04
 
 # Labels and Credits
 LABEL \
-    name="reNgine" \
-    author="Yogesh Ojha <yogesh.ojha11@gmail.com>" \
-    description="reNgine is a automated pipeline of recon process, useful for information gathering during web application penetration testing."
+    name="ajta" \
+    author="disciple" \
+    description="ajta is a automated pipeline of recon process, useful for information gathering during web application penetration testing."
 
 # Environment Variables
 ENV DEBIAN_FRONTEND="noninteractive" \
@@ -52,7 +52,6 @@ RUN wget https://golang.org/dl/go1.20.linux-amd64.tar.gz
 RUN tar -xvf go1.20.linux-amd64.tar.gz
 RUN rm go1.20.linux-amd64.tar.gz
 RUN mv go /usr/local
-
 # Download geckodriver
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
 RUN tar -xvf geckodriver-v0.32.0-linux64.tar.gz
