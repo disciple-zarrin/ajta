@@ -285,8 +285,17 @@ def initiate_subscan(
 	if not method:
 		logger.warning(f'Task {scan_type} is not supported by reNgine. Skipping')
 		return
+<<<<<<< HEAD
 	scan.tasks.append(scan_type)
 	scan.save()
+=======
+	'''
+	a target in itself is a subdomain, some tool give subdomains as
+	www.disciple-zarrin.ir but url and everything else resolves to disciple-zarrin.ir
+	In that case, we would already need to store target itself as subdomain
+	'''
+	initial_subdomain_file = '/target_domain.txt' if task.subdomain_discovery else '/sorted_subdomain_collection.txt'
+>>>>>>> 3a1b3e3a (init ajta)
 
 	# Send start notif
 	send_scan_notif.delay(
