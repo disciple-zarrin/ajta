@@ -539,7 +539,7 @@ function get_interesting_subdomains(project, target_id, scan_history_id) {
 				// </div>
 				// <div id="cardCollpase4" class="collapse show">
 				// <div class="card-body">
-				// reNgine could not identify any interesting subdomains. You can customize interesting subdomain keywords <a href="/scanEngine/interesting/lookup/">from here</a> and this section would be automatically updated.
+				// ajta could not identify any interesting subdomains. You can customize interesting subdomain keywords <a href="/scanEngine/interesting/lookup/">from here</a> and this section would be automatically updated.
 				// </div>
 				// </div>`);
 			} else {
@@ -1475,7 +1475,7 @@ function get_target_whois(domain_name) {
 				} else {
 					Swal.fire({
 						title: 'Oops!',
-						text: `reNgine could not fetch WHOIS records for ${domain_name}!`,
+						text: `ajta could not fetch WHOIS records for ${domain_name}!`,
 						icon: 'error'
 					});
 				}
@@ -1507,7 +1507,7 @@ function get_domain_whois(domain_name, show_add_target_btn=false) {
 		} else {
 			Swal.fire({
 				title: 'Oops!',
-				text: `reNgine could not fetch WHOIS records for ${domain_name}! ${response['message']}`,
+				text: `ajta could not fetch WHOIS records for ${domain_name}! ${response['message']}`,
 				icon: 'error'
 			});
 		}
@@ -2569,7 +2569,7 @@ function get_most_vulnerable_target(slug=null, scan_id=null, target_id=null, ign
 				<div class="mt-4 alert alert-warning">
 				Could not find most vulnerable targets.
 				</br>
-				Once the vulnerability scan is performed, reNgine will identify the most vulnerable targets.</div>
+				Once the vulnerability scan is performed, ajta will identify the most vulnerable targets.</div>
 			`);
 		}
 	});
@@ -2664,7 +2664,7 @@ function get_most_common_vulnerability(slug=null, scan_id=null, target_id=null, 
 				<div class="mt-4 alert alert-warning">
 				Could not find Most Common Vulnerabilities.
 				</br>
-				Once the vulnerability scan is performed, reNgine will identify the Most Common Vulnerabilities.</div>
+				Once the vulnerability scan is performed, ajta will identify the Most Common Vulnerabilities.</div>
 			`);
 		}
 	});

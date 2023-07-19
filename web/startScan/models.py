@@ -1,6 +1,7 @@
 from urllib.parse import urlparse
 from django.apps import apps
 from django.contrib.postgres.fields import ArrayField
+<<<<<<< HEAD
 from django.db import models
 from django.utils import timezone
 from reNgine.definitions import (CELERY_TASK_STATUSES,
@@ -27,6 +28,13 @@ class hybrid_property:
 	def expression(self, exp):
 		self.exp = exp
 		return self
+=======
+
+from targetApp.models import Domain
+from scanEngine.models import EngineType
+
+from ajta.utilities import *
+>>>>>>> ba258ee7 (init ajta)
 
 
 class ScanHistory(models.Model):

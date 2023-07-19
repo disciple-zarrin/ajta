@@ -1,5 +1,10 @@
 from django.apps import AppConfig
+<<<<<<< HEAD
 from reNgine.definitions import logger
+=======
+
+from ajta.definitions import logger
+>>>>>>> ba258ee7 (init ajta)
 
 
 class StartscanConfig(AppConfig):

@@ -265,7 +265,7 @@ def on_user_logged_out(sender, request, **kwargs):
         request,
         messages.INFO,
         'You have been successfully logged out. Thank you ' +
-        'for using reNgine.')
+        'for using ajta.')
 
 
 @receiver(user_logged_in)

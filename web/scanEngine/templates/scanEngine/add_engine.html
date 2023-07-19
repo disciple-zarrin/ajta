@@ -33,6 +33,7 @@ Add Scan Engine
 
 {% block main_content %}
 <div class="row">
+<<<<<<< HEAD
   <div class="col-xl-12">
   <div class="card">
   <div class="card-body">
@@ -50,6 +51,25 @@ Add Scan Engine
   </div>
   </div>
   </div>
+=======
+	<div class="col-xl-12">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="header-title">Scan Engines</h4>
+				<p>
+					<code>Scan Engines</code> are the most crucial part of ajta. They define how a <code>scan</code> is performed against a target. <code>Scan Engines</code> allow you to define the configuration and use it against multiple targets.
+					<br>
+					YAML configuration allows you fine tuning the engines such as rate, templates to be used, or configurations to be used.
+				</p>
+				<form method="POST">
+					{% csrf_token %}
+					{% include "scanEngine/_items/form_engine.html" %}
+					<button class="btn btn-primary submit-fn mt-2 float-end" type="submit">Add Scan Engine</button>
+				</form>
+			</div>
+		</div>
+	</div>
+>>>>>>> ba258ee7 (init ajta)
 </div>
 {% endblock main_content %}
 

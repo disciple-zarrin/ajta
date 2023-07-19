@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+from rest_framework import serializers
+from startScan.models import *
+from ajta.common_func import *
+from targetApp.models import *
+from scanEngine.models import *
+>>>>>>> ba258ee7 (init ajta)
 from dashboard.models import *
 from django.contrib.humanize.templatetags.humanize import (naturalday,
 														   naturaltime)

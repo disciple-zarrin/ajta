@@ -76,6 +76,7 @@
               <div class="arrow-down"></div>
             </a>
             <div class="dropdown-menu" aria-labelledby="topnav-settings">
+<<<<<<< HEAD
               {% if user|can:'modify_scan_configurations' %}
               <a href="{% url 'proxy_settings' current_project.slug %}" class="dropdown-item">Proxies</a>
               <a href="{% url 'tool_settings' current_project.slug %}" class="dropdown-item">Tool Settings</a>
@@ -94,6 +95,15 @@
               <a href="{% url 'hackerone_settings' current_project.slug %}" class="dropdown-item">Hackerone Settings</a>
               <a href="{% url 'notification_settings' current_project.slug %}" class="dropdown-item">Notification Settings</a>
               {% endif %}
+=======
+              <a href="{% url 'proxy_settings' %}" class="dropdown-item">Proxies</a>
+              <a href="{% url 'tool_settings' %}" class="dropdown-item">Tool Settings</a>
+              <a href="{% url 'tool_arsenal' %}" class="dropdown-item">Tools Arsenal</a>
+              <a href="{% url 'report_settings' %}" class="dropdown-item">Report Settings</a>
+              <a href="{% url 'ajta_settings' %}" class="dropdown-item">ajta Settings</a>
+              <a href="{% url 'hackerone_settings' %}" class="dropdown-item">Hackerone Settings</a>
+              <a href="{% url 'notification_settings' %}" class="dropdown-item">Notification Settings</a>
+>>>>>>> ba258ee7 (init ajta)
             </div>
           </li>
         </ul>

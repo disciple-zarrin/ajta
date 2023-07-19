@@ -10,11 +10,16 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from rolepermissions.decorators import has_permission_decorator
 
+<<<<<<< HEAD
 from reNgine.common_func import *
 from reNgine.tasks import (run_command, send_discord_message, send_slack_message, send_telegram_message)
 from scanEngine.forms import *
 from scanEngine.forms import ConfigurationForm
 from scanEngine.models import *
+=======
+from ajta.common_func import *
+from ajta.tasks import run_system_commands
+>>>>>>> ba258ee7 (init ajta)
 
 
 def index(request, slug):
@@ -266,9 +271,13 @@ def tool_specific_settings(request, slug):
     context['gf_patterns'] = sorted(gf_list.split('\n'))
     return render(request, 'scanEngine/settings/tool.html', context)
 
+<<<<<<< HEAD
 
 @has_permission_decorator(PERM_MODIFY_SYSTEM_CONFIGURATIONS, redirect_url=FOUR_OH_FOUR_URL)
 def rengine_settings(request, slug):
+=======
+def ajta_settings(request):
+>>>>>>> ba258ee7 (init ajta)
     context = {}
 
     total, used, _ = shutil.disk_usage("/")
@@ -280,10 +289,10 @@ def rengine_settings(request, slug):
     context['consumed_percent'] = int(100 * float(used)/float(total))
 
     context['settings_nav_active'] = 'active'
-    context['rengine_settings_li'] = 'active'
+    context['ajta_settings_li'] = 'active'
     context['settings_ul_show'] = 'show'
 
-    return render(request, 'scanEngine/settings/rengine.html', context)
+    return render(request, 'scanEngine/settings/ajta.html', context)
 
 
 @has_permission_decorator(PERM_MODIFY_SCAN_CONFIGURATIONS, redirect_url=FOUR_OH_FOUR_URL)
@@ -305,9 +314,9 @@ def notification_settings(request, slug):
 
         if form.is_valid():
             form.save()
-            send_slack_message('*reNgine*\nCongratulations! your notification services are working.')
-            send_telegram_message('*reNgine*\nCongratulations! your notification services are working.')
-            send_discord_message('**reNgine**\nCongratulations! your notification services are working.')
+            send_slack_message('*ajta*\nCongratulations! your notification services are working.')
+            send_telegram_message('*ajta*\nCongratulations! your notification services are working.')
+            send_discord_message('**ajta**\nCongratulations! your notification services are working.')
             messages.add_message(
                 request,
                 messages.INFO,

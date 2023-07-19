@@ -1,5 +1,10 @@
 from django import forms
+<<<<<<< HEAD
 from reNgine.validators import validate_domain
+=======
+from .models import *
+from ajta.validators import validate_domain
+>>>>>>> ba258ee7 (init ajta)
 
 from .models import *
 
