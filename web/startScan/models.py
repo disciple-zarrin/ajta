@@ -11,7 +11,7 @@ from django.contrib.postgres.fields import ArrayField
 from targetApp.models import Domain
 from scanEngine.models import EngineType
 
-from reNgine.utilities import *
+from ajta.utilities import *
 
 
 class ScanHistory(models.Model):

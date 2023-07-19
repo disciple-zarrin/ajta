@@ -53,9 +53,9 @@ urlpatterns = [
         views.tool_arsenal_section,
         name='tool_arsenal'),
     path(
-        'rengine_settings',
-        views.rengine_settings,
-        name='rengine_settings'),
+        'ajta_settings',
+        views.ajta_settings,
+        name='ajta_settings'),
     path(
         'notification_settings',
         views.notification_settings,

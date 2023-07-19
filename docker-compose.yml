@@ -14,20 +14,20 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     networks:
-      - rengine_network
+      - ajta_network
 
   redis:
     image: "redis:alpine"
     hostname: redis
     networks:
-      - rengine_network
+      - ajta_network
 
   celery:
     build:
       context: ./web
     restart: always
     entrypoint: /usr/src/app/celery-entrypoint.sh
-    command: watchmedo auto-restart --recursive --pattern="*.py" --directory="/usr/src/app/reNgine/" -- celery -A reNgine worker --autoscale=${MAX_CONCURRENCY},${MIN_CONCURRENCY} -l INFO
+    command: watchmedo auto-restart --recursive --pattern="*.py" --directory="/usr/src/app/ajta/" -- celery -A ajta worker --autoscale=${MAX_CONCURRENCY},${MIN_CONCURRENCY} -l INFO
     volumes:
       - ./web:/usr/src/app
       - github_repos:/usr/src/github
@@ -50,12 +50,12 @@ services:
       - db
       - redis
     networks:
-      - rengine_network
+      - ajta_network
 
   celery-beat:
     build: ./web
     entrypoint: /usr/src/app/beat-entrypoint.sh
-    command: celery -A reNgine beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    command: celery -A ajta beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
     environment:
       - DEBUG=0
       - CELERY_BROKER=redis://redis:6379/0
@@ -76,14 +76,13 @@ services:
       - nuclei_templates:/root/nuclei-templates
       - tool_config:/root/.config
     networks:
-      - rengine_network
+      - ajta_network
 
   web:
     build:
       context: ./web
     entrypoint: /usr/src/app/entrypoint.sh
     restart: always
-    image: docker.pkg.github.com/yogeshojha/rengine/rengine:latest
     environment:
       - DEBUG=0
       - CELERY_BROKER=redis://redis:6379/0
@@ -95,7 +94,7 @@ services:
       - POSTGRES_HOST=${POSTGRES_HOST}
       # THIS IS A MUST FOR CHECKING UPDATE, EVERYTIME A COMMIT IS MERGED INTO
       # MASTER, UPDATE THIS!!! MAJOR.MINOR.PATCH https://semver.org/
-      - RENGINE_CURRENT_VERSION='1.3.6'
+      - AJTA_CURRENT_VERSION='1.0.0'
     volumes:
       - ./web:/usr/src/app
       - github_repos:/usr/src/github
@@ -112,15 +111,15 @@ services:
       - celery
       - celery-beat
     networks:
-      rengine_network:
+      ajta_network:
         aliases:
-          - rengine
+          - ajta
 
   tor:
     image: peterdavehello/tor-socks-proxy
     restart: always
     networks:
-      - rengine_network
+      - ajta_network
     depends_on:
       - web
 
@@ -136,35 +135,44 @@ services:
       - redis
     secrets:
       - source: proxy.ca
-        target: /etc/nginx/certs/rengine_chain.pem
+        target: /etc/nginx/certs/ajta_chain.pem
       - source: proxy.cert
-        target: /etc/nginx/certs/rengine.pem
+        target: /etc/nginx/certs/ajta.pem
       - source: proxy.key
-        target: /etc/nginx/certs/rengine_rsa.key
+        target: /etc/nginx/certs/ajta_rsa.key
     volumes:
-      - ./config/nginx/rengine.conf:/etc/nginx/conf.d/rengine.conf:ro
+      - ./config/nginx/ajta.conf:/etc/nginx/conf.d/ajta.conf:ro
       - static_volume:/usr/src/app/staticfiles/
       - scan_results:/usr/src/scan_results
     networks:
-      - rengine_network
+      - ajta_network
 
 networks:
-  rengine_network:
+  ajta_network:
+    name : ajta_network
 
 volumes:
   tool_config:
+    name: tool_config
   postgres_data:
+    name: postgres_data
   gf_patterns:
+    name: gf_patterns
   nuclei_templates:
+    name: nuclei_templates
   github_repos:
+    name: github_repos
   wordlist:
+    name: wordlist
   scan_results:
+    name: scan_results
   static_volume:
+    name: static_volume
 
 secrets:
   proxy.ca:
-    file: ./secrets/certs/rengine_chain.pem
+    file: ./secrets/certs/ajta_chain.pem
   proxy.key:
-    file: ./secrets/certs/rengine_rsa.key
+    file: ./secrets/certs/ajta_rsa.key
   proxy.cert:
-    file: ./secrets/certs/rengine.pem
+    file: ./secrets/certs/ajta.pem

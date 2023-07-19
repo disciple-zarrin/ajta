@@ -21,7 +21,7 @@ from targetApp.models import *
 from startScan.models import *
 from scanEngine.models import *
 from targetApp.forms import *
-from reNgine.common_func import *
+from ajta.common_func import *
 
 
 

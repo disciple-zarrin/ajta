@@ -4,9 +4,9 @@ import os
 import sys
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'reNgine.settings')
-    # show rengine artwork
-    f = open('art/reNgine.txt', 'r')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ajta.settings')
+    # show ajta artwork
+    f = open('art/ajta.txt', 'r')
     file_contents = f.read()
     print (file_contents)
     f.close()

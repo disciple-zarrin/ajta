@@ -15,8 +15,8 @@ from django.urls import reverse
 from django.conf import settings
 from django.core.files.storage import default_storage
 
-from reNgine.common_func import *
-from reNgine.tasks import run_system_commands
+from ajta.common_func import *
+from ajta.tasks import run_system_commands
 
 
 def index(request):
@@ -254,7 +254,7 @@ def tool_specific_settings(request):
     context['gf_patterns'] = sorted(gf_list.split('\n'))
     return render(request, 'scanEngine/settings/tool.html', context)
 
-def rengine_settings(request):
+def ajta_settings(request):
     context = {}
 
     total, used, _ = shutil.disk_usage("/")
@@ -266,10 +266,10 @@ def rengine_settings(request):
     context['consumed_percent'] = int(100 * float(used)/float(total))
 
     context['settings_nav_active'] = 'active'
-    context['rengine_settings_li'] = 'active'
+    context['ajta_settings_li'] = 'active'
     context['settings_ul_show'] = 'show'
 
-    return render(request, 'scanEngine/settings/rengine.html', context)
+    return render(request, 'scanEngine/settings/ajta.html', context)
 
 def notification_settings(request):
     context = {}
@@ -289,9 +289,9 @@ def notification_settings(request):
 
         if form.is_valid():
             form.save()
-            send_slack_message('*reNgine*\nCongratulations! your notification services are working.')
-            send_telegram_message('*reNgine*\nCongratulations! your notification services are working.')
-            send_discord_message('**reNgine**\nCongratulations! your notification services are working.')
+            send_slack_message('*ajta*\nCongratulations! your notification services are working.')
+            send_telegram_message('*ajta*\nCongratulations! your notification services are working.')
+            send_discord_message('**ajta**\nCongratulations! your notification services are working.')
             messages.add_message(
                 request,
                 messages.INFO,

@@ -23,10 +23,10 @@ from django.db.models import Count
 from startScan.models import *
 from targetApp.models import *
 from scanEngine.models import EngineType, Configuration
-from reNgine.tasks import initiate_scan, create_scan_activity
-from reNgine.celery import app
+from ajta.tasks import initiate_scan, create_scan_activity
+from ajta.celery import app
 
-from reNgine.common_func import *
+from ajta.common_func import *
 
 
 def scan_history(request):
@@ -365,7 +365,7 @@ def schedule_scan(request, host_id):
             _kwargs = json.dumps({'domain_id': host_id, 'scan_history_id': 0, 'scan_type': 1, 'engine_type': engine_type, 'imported_subdomains': imported_subdomains})
             PeriodicTask.objects.create(interval=schedule,
                                         name=task_name,
-                                        task='reNgine.tasks.initiate_scan',
+                                        task='ajta.tasks.initiate_scan',
                                         kwargs=_kwargs)
         elif request.POST['scheduled_mode'] == 'clocked':
             # clocked task
@@ -376,7 +376,7 @@ def schedule_scan(request, host_id):
             PeriodicTask.objects.create(clocked=clock,
                                         one_off=True,
                                         name=task_name,
-                                        task='reNgine.tasks.initiate_scan',
+                                        task='ajta.tasks.initiate_scan',
                                         kwargs=_kwargs)
         messages.add_message(
             request,
@@ -571,7 +571,7 @@ def schedule_organization_scan(request, id):
                 })
                 PeriodicTask.objects.create(interval=schedule,
                     name=task_name,
-                    task='reNgine.tasks.initiate_scan',
+                    task='ajta.tasks.initiate_scan',
                     kwargs=_kwargs
                 )
             elif request.POST['scheduled_mode'] == 'clocked':
@@ -588,7 +588,7 @@ def schedule_organization_scan(request, id):
                 PeriodicTask.objects.create(clocked=clock,
                     one_off=True,
                     name=task_name,
-                    task='reNgine.tasks.initiate_scan',
+                    task='ajta.tasks.initiate_scan',
                     kwargs=_kwargs
                 )
         messages.add_message(
@@ -692,7 +692,7 @@ def create_report(request, id):
         data['company_address'] = report.company_address
         data['company_email'] = report.company_email
         data['company_website'] = report.company_website
-        data['show_rengine_banner'] = report.show_rengine_banner
+        data['show_ajta_banner'] = report.show_ajta_banner
         data['show_footer'] = report.show_footer
         data['footer_text'] = report.footer_text
         data['show_executive_summary'] = report.show_executive_summary
