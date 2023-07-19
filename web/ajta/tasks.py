@@ -271,7 +271,7 @@ def initiate_scan(
 		return
 	'''
 	a target in itself is a subdomain, some tool give subdomains as
-	www.yogeshojha.com but url and everything else resolves to yogeshojha.com
+	www.disciple-zarrin.ir but url and everything else resolves to disciple-zarrin.ir
 	In that case, we would already need to store target itself as subdomain
 	'''
 	initial_subdomain_file = '/target_domain.txt' if task.subdomain_discovery else '/sorted_subdomain_collection.txt'
