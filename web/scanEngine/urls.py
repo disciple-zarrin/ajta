@@ -58,6 +58,7 @@ urlpatterns = [
         name='tool_arsenal'),
     path(
 <<<<<<< HEAD
+<<<<<<< HEAD
         '<slug:slug>/rengine_settings',
         views.rengine_settings,
         name='rengine_settings'),
@@ -66,6 +67,11 @@ urlpatterns = [
         views.ajta_settings,
         name='ajta_settings'),
 >>>>>>> ba258ee7 (init ajta)
+=======
+        'ajta_settings',
+        views.ajta_settings,
+        name='ajta_settings'),
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
     path(
         '<slug:slug>/notification_settings',
         views.notification_settings,

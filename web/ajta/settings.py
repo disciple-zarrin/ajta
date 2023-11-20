@@ -1,7 +1,10 @@
 import mimetypes
 import os
+<<<<<<< HEAD
 <<<<<<< HEAD:web/reNgine/settings.py
 =======
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 from ajta.init import first_run
 from celery.schedules import crontab
 >>>>>>> ba258ee7 (init ajta):web/ajta/settings.py

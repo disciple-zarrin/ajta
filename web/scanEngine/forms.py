@@ -1,11 +1,15 @@
 from django import forms
 from django_ace import AceWidget
 <<<<<<< HEAD
+<<<<<<< HEAD
 from reNgine.validators import validate_short_name
 from scanEngine.models import *
 =======
 from ajta.validators import validate_short_name
 >>>>>>> ba258ee7 (init ajta)
+=======
+from ajta.validators import validate_short_name
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 
 class AddEngineForm(forms.ModelForm):

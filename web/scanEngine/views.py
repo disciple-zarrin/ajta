@@ -15,11 +15,22 @@ from reNgine.common_func import *
 from reNgine.tasks import (run_command, send_discord_message, send_slack_message, send_telegram_message)
 from scanEngine.forms import *
 from scanEngine.forms import ConfigurationForm
+<<<<<<< HEAD
 from scanEngine.models import *
 =======
 from ajta.common_func import *
 from ajta.tasks import run_system_commands
 >>>>>>> ba258ee7 (init ajta)
+=======
+from django.contrib import messages
+from django import http
+from django.urls import reverse
+from django.conf import settings
+from django.core.files.storage import default_storage
+
+from ajta.common_func import *
+from ajta.tasks import run_system_commands
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 
 def index(request, slug):
@@ -272,12 +283,16 @@ def tool_specific_settings(request, slug):
     return render(request, 'scanEngine/settings/tool.html', context)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 @has_permission_decorator(PERM_MODIFY_SYSTEM_CONFIGURATIONS, redirect_url=FOUR_OH_FOUR_URL)
 def rengine_settings(request, slug):
 =======
 def ajta_settings(request):
 >>>>>>> ba258ee7 (init ajta)
+=======
+def ajta_settings(request):
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
     context = {}
 
     total, used, _ = shutil.disk_usage("/")

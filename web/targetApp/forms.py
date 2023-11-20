@@ -1,5 +1,6 @@
 from django import forms
 <<<<<<< HEAD
+<<<<<<< HEAD
 from reNgine.validators import validate_domain
 =======
 from .models import *
@@ -8,6 +9,10 @@ from ajta.validators import validate_domain
 
 from .models import *
 
+=======
+from .models import *
+from ajta.validators import validate_domain
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 class AddTargetForm(forms.Form):
     name = forms.CharField(

@@ -1,6 +1,9 @@
 #!/usr/bin/python
 import logging
+<<<<<<< HEAD
 import re
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 ###############################################################################
 # TOOLS DEFINITIONS
@@ -11,13 +14,18 @@ logger = logging.getLogger('django')
 # TOOLS DEFINITIONS
 ###############################################################################
 
+<<<<<<< HEAD
 EMAIL_REGEX = re.compile(r'[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+')
 
+=======
+NUCLEI_TEMPLATES_PATH = '/root/nuclei-templates/'
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 ###############################################################################
 # YAML CONFIG DEFINITIONS
 ###############################################################################
 
 ALL = 'all'
+<<<<<<< HEAD
 AMASS_WORDLIST = 'amass_wordlist'
 AUTO_CALIBRATION = 'auto_calibration'
 CUSTOM_HEADER = 'custom_header'
@@ -189,6 +197,68 @@ SUBDOMAIN_SCAN_DEFAULT_TOOLS = ['subfinder', 'ctfr', 'sublist3r', 'tlsx']
 # endpoints scan
 ENDPOINT_SCAN_DEFAULT_TOOLS = ['gospider']
 ENDPOINT_SCAN_DEFAULT_DUPLICATE_FIELDS = ['content_length', 'page_title']
+=======
+
+SUBDOMAIN_DISCOVERY = 'subdomain_discovery'
+PORT_SCAN = 'port_scan'
+SCREENSHOT = 'screenshot'
+DIR_FILE_FUZZ = 'dir_file_fuzz'
+FETCH_URL = 'fetch_url'
+INTENSITY = 'intensity'
+
+USES_TOOLS = 'uses_tools'
+THREADS = 'threads'
+AMASS_WORDLIST = 'amass_wordlist'
+NAABU_RATE = 'rate'
+PORT = 'port'
+PORTS = 'ports'
+EXCLUDE_PORTS = 'exclude_ports'
+
+EXTENSIONS = 'extensions'
+USE_EXTENSIONS = 'use_extensions'
+EXCLUDE_EXTENSIONS = 'exclude_extensions'
+STOP_ON_ERROR = 'stop_on_error'
+DELAY = 'delay'
+MATCH_HTTP_STATUS = 'match_http_status'
+AUTO_CALIBRATION = 'auto_calibration'
+FOLLOW_REDIRECT = 'follow_redirect'
+
+RECURSIVE = 'recursive'
+RECURSIVE_LEVEL = 'recursive_level'
+WORDLIST = 'wordlist'
+
+TIMEOUT = 'timeout'
+MAX_TIME = 'max_time'
+EXCLUDED_SUBDOMAINS = 'excluded_subdomains'
+EXCLUDE_TEXT = 'exclude_text'
+IGNORE_FILE_EXTENSION = 'ignore_file_extension'
+GF_PATTERNS = 'gf_patterns'
+
+VULNERABILITY_SCAN = 'vulnerability_scan'
+CUSTOM_NUCLEI_TEMPLATE = 'custom_templates'
+NUCLEI_TEMPLATE = 'templates'
+NUCLEI_SEVERITY = 'severity'
+NUCLEI_CONCURRENCY = 'concurrency'
+RATE_LIMIT = 'rate_limit'
+RETRIES = 'retries'
+
+OSINT = 'osint'
+OSINT_DOCUMENTS_LIMIT = 'documents_limit'
+OSINT_DISCOVER = 'discover'
+OSINT_DORK = 'dork'
+
+USE_AMASS_CONFIG = 'use_amass_config'
+USE_SUBFINDER_CONFIG = 'use_subfinder_config'
+USE_NUCLEI_CONFIG = 'use_nuclei_config'
+USE_NAABU_CONFIG = 'use_naabu_config'
+
+CUSTOM_HEADER = 'custom_header'
+
+###############################################################################
+# Wordlist DEFINITIONS
+###############################################################################
+AMASS_DEFAULT_WORDLIST_PATH = 'wordlist/default_wordlist/deepmagic.com-prefixes-top50000.txt'
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 
 ###############################################################################
@@ -206,6 +276,7 @@ MEDIM = '200px'
 LARGE = '400px'
 XLARGE = '500px'
 
+<<<<<<< HEAD
 # Discord message colors
 DISCORD_INFO_COLOR = '0xfbbc00' # yellow
 DISCORD_WARNING_COLOR = '0xf75b00' # orange
@@ -226,6 +297,8 @@ STATUS_TO_SEVERITIES = {
     'ABORTED': 'error'
 }
 
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 ###############################################################################
 # Interesting Subdomain DEFINITIONS
 ###############################################################################
@@ -240,6 +313,7 @@ FAILED_TASK = 0
 RUNNING_TASK = 1
 SUCCESS_TASK = 2
 ABORTED_TASK = 3
+<<<<<<< HEAD
 
 CELERY_TASK_STATUS_MAP = {
     INITIATED_TASK: 'INITITATED',
@@ -258,6 +332,8 @@ CELERY_TASK_STATUSES = (
 )
 DYNAMIC_ID = -1
 
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 ###############################################################################
 # Uncommon Ports
 # Source: https://github.com/six2dez/reconftw/blob/main/reconftw.cfg
@@ -350,8 +426,12 @@ UNCOMMON_WEB_PORTS = [
     20720,
     32000,
     55440,
+<<<<<<< HEAD
     55672,
 ]
+=======
+    55672]
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 ###############################################################################
 # WHOIS DEFINITIONS
@@ -367,6 +447,7 @@ IGNORE_WHOIS_RELATED_KEYWORD = [
     'Domain Administrator',
     'Administrator',
 ]
+<<<<<<< HEAD
 
 
 # Default FETCH URL params
@@ -480,3 +561,5 @@ ATTACK_SUGGESTION_GPT_SYSTEM_PROMPT = """
 
 # OSINT GooFuzz Path
 GOFUZZ_EXEC_PATH = '/usr/src/github/goofuzz/GooFuzz'
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5

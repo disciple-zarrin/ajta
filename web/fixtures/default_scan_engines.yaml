@@ -90,6 +90,7 @@
   pk: 6
   fields:
 <<<<<<< HEAD
+<<<<<<< HEAD
     engine_name: reNgine Recommended
     yaml_configuration: "subdomain_discovery: {\r\n  'uses_tools': ['subfinder', 'ctfr',
       'sublist3r', 'tlsx', 'oneforall', 'netlas'],\r\n  'enable_http_crawl': true,\r\n
@@ -103,6 +104,8 @@
       true,\r\n  'nuclei': {\r\n    'use_conf': false,\r\n    'severities': ['low',
       'medium', 'high', 'critical']\r\n  }\r\n}"
 =======
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
     engine_name: ajta Recommended
     subdomain_discovery: true
     waf_detection: true

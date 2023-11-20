@@ -34,7 +34,10 @@ from targetApp.models import Domain
 from scanEngine.models import EngineType
 
 from ajta.utilities import *
+<<<<<<< HEAD
 >>>>>>> ba258ee7 (init ajta)
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 
 class ScanHistory(models.Model):

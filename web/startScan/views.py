@@ -27,7 +27,10 @@ from ajta.tasks import initiate_scan, create_scan_activity
 from ajta.celery import app
 
 from ajta.common_func import *
+<<<<<<< HEAD
 >>>>>>> ba258ee7 (init ajta)
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 
 def scan_history(request, slug):
@@ -540,10 +543,13 @@ def schedule_scan(request, host_id, slug):
             PeriodicTask.objects.create(interval=schedule,
                                         name=task_name,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         task='reNgine.tasks.initiate_scan',
                                         kwargs=json.dumps(kwargs))
         elif scheduled_mode == 'clocked':
 =======
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
                                         task='ajta.tasks.initiate_scan',
                                         kwargs=_kwargs)
         elif request.POST['scheduled_mode'] == 'clocked':
@@ -564,9 +570,12 @@ def schedule_scan(request, host_id, slug):
                                         one_off=True,
                                         name=task_name,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         task='reNgine.tasks.initiate_scan',
                                         kwargs=json.dumps(kwargs))
 =======
+=======
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
                                         task='ajta.tasks.initiate_scan',
                                         kwargs=_kwargs)
 >>>>>>> ba258ee7 (init ajta)

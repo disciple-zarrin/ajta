@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 web/custom_engines*
 Pipfile*
 resume.cfg
@@ -10,6 +11,9 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
+=======
+*.log *.pot *.pyc __pycache__/ local_settings.py db.sqlite3 db.sqlite3-journal media
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 ### Django.Python Stack ###
 # Byte-compiled / optimized / DLL files

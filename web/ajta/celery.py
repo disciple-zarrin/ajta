@@ -1,4 +1,5 @@
 import os
+<<<<<<< HEAD
 
 import django
 from celery import Celery
@@ -23,3 +24,13 @@ app.autodiscover_tasks()
 def config_loggers(*args, **kwargs):
     from logging.config import dictConfig
     dictConfig(app.conf['LOGGING'])
+=======
+from celery import Celery
+
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ajta.settings')
+
+app = Celery('ajta')
+app.config_from_object('django.conf:settings', namespace='CELERY')
+app.autodiscover_tasks()
+>>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
