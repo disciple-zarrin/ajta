@@ -147,10 +147,6 @@ services:
       - scan_results:/usr/src/scan_results
     networks:
       - ajta_network
-<<<<<<< HEAD
-
-=======
->>>>>>> d8e08d12274f9a1fe180c695d7e3eb1a06e38fa5
 
 networks:
   ajta_network:
