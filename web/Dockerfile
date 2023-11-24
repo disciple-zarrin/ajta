@@ -48,7 +48,7 @@ RUN apt install -y  --no-install-recommends \
 RUN add-apt-repository ppa:mozillateam/ppa
 
 # Download and install go 1.20
-RUN wget -O go1.20.linux-amd64.tar.gz  https://cdna.p30download.ir/p30dl-software/Go.v1.19.5.Linux.x64_p30download.com.tar.gz
+RUN wget https://golang.org/dl/go1.20.linux-amd64.tar.gz
 RUN tar -xvf go1.20.linux-amd64.tar.gz
 RUN rm go1.20.linux-amd64.tar.gz
 RUN mv go /usr/local
