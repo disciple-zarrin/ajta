@@ -1,7 +1,5 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-=======
 if [ "$DATABASE" = "postgres" ]
 then
     echo "Waiting for postgres..."
@@ -18,7 +16,6 @@ while ! celery -A ajta status; do
   sleep 0.5
 done
 
->>>>>>> ba258ee7 (init ajta)
 python3 manage.py migrate
 
 exec "$@"
